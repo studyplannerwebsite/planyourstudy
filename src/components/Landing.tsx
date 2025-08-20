@@ -38,7 +38,7 @@ const Landing: React.FC = () => {
 
   const loadUserStats = async () => {
     try {
-      const { data, error } = await supabase.rpc('get_current_statistics');
+      const { data, error } = await supabase.rpc('get_current_statistics', {});
       if (error) throw error;
       if (data && data.length > 0) {
         setUserStats(data[0]);

@@ -121,7 +121,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ adminUser }) => {
 
   const loadStatistics = async () => {
     try {
-      const { data, error } = await supabase.rpc('get_current_statistics');
+      const { data, error } = await supabase.rpc('get_current_statistics', {});
       
       if (error) throw error;
       

@@ -52,7 +52,7 @@ const MobileAdminApp: React.FC = () => {
     setIsLoading(true);
     try {
       // Load statistics
-      const { data: statsData } = await supabase.rpc('get_current_statistics');
+      const { data: statsData } = await supabase.rpc('get_current_statistics', {});
       if (statsData && statsData.length > 0) {
         setStatistics(statsData[0]);
       } else {
